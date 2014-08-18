@@ -56,6 +56,7 @@ for iter in SUFFIX:
 	    suffix2 = link2.get('href')
 	    url_level3 = BASE[:-5] + suffix2
 	    LOG("Find next step Url : %s" %(url_level3))
+	    #TODO: tweek to avoid auto-robot detection on servier-side.
 	    time.sleep(3)
 
 	    req3 = urllib2.urlopen(url_level3)
@@ -66,6 +67,7 @@ for iter in SUFFIX:
 		suffix3 = link3.get('href')
 		url_level4 = BASE[:-5] + suffix3
 		LOG("Find second next step Url : %s" %(url_level4))
+		#TODO: tweek to avoid auto-robot detection on servier-side.
 		time.sleep(3)
 		driver.get(url_level4)
 		soup4 = BeautifulSoup(driver.page_source)
@@ -83,6 +85,7 @@ for iter in SUFFIX:
 		    if result <> None: continue
 
 		    LOG("Find third next step Url : %s" %(url_level5))
+		    #TODO: tweek to avoid auto-robot detection on servier-side.
 		    time.sleep(3)
 		    driver.get(url_level5)
 		    soup5 = BeautifulSoup(driver.page_source)
